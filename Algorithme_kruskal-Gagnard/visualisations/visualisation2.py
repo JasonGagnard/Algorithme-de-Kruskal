@@ -2,7 +2,7 @@ from graphviz import Graph
 import sys
 import os
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
-from implementations.implementation1 import Kruskal
+from implementations.implementation2 import Kruskal_N2
 def visualiser_kruskal(arcs, Arbre_minimum, nombre_sommets):
     # Créer un graphe non dirigé
     dot = Graph(comment='Graphe de Kruskal')
@@ -33,7 +33,7 @@ if __name__ == '__main__':
 
     nombre_sommets = 7
 
-    Arbre_minimum = Kruskal(arcs, nombre_sommets)
+    Arbre_minimum = Kruskal_N2(arcs, nombre_sommets)
     print("Arbre couvrant minimum:", Arbre_minimum)
 
     visualiser_kruskal(arcs, Arbre_minimum, nombre_sommets)
