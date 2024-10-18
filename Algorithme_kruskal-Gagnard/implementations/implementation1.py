@@ -1,4 +1,5 @@
 from graphviz import Graph
+import timeit
 
 class EnsembleDisjoint:
     """
@@ -71,7 +72,11 @@ if __name__ == '__main__':
 
     nombre_sommets = 7
 
+    nombre_repetitions = 1000
+    temps_moyen = timeit.timeit(lambda: Kruskal(arcs, nombre_sommets), number=nombre_repetitions) / nombre_repetitions
+
     Arbre_minimum = Kruskal(arcs, nombre_sommets)
     print("Arbre couvrant minimum:", Arbre_minimum)
+    print("Temps d'exécution moyen de l'algorithme de Kruskal sur {} répétitions : {:.8f} secondes".format(nombre_repetitions, temps_moyen))
 
     
